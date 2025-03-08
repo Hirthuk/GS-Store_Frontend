@@ -1,0 +1,6 @@
+- **react-router-dom**: This is used for client-side routing in React applications.
+ It helps in navigating between pages without a full reload and provides features like `BrowserRouter`, `Routes`, 
+ `Link`, and `useNavigate` for handling navigation.  
+
+- **react-toastify**: This is used to show toast notifications (small pop-up messages) in a React app.
+ It allows customizable success, error, and info messages with auto-dismiss and styling options.
