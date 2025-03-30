@@ -4,3 +4,17 @@
 
 - **react-toastify**: This is used to show toast notifications (small pop-up messages) in a React app.
  It allows customizable success, error, and info messages with auto-dismiss and styling options.
+
+Used in Main.js to route the pages inside the app.
+ `<BrowserRouter>` in `main.js` is used to enable client-side routing in a React app. It wraps the entire application, allowing navigation between pages without a full page reload. 
+ It replaces `<StrictMode>` when focusing on routing instead of React’s development warnings. 🚀
+
+ NavLink used for navigation with "to" to route the page -- applied in navbar
+
+Tags - Applied in cart logo and profile icon
+group (Parent-Child Styling)
+group is a Tailwind utility class that allows styling child elements based on the state of a parent element (like hover, focus, or active).
+
+2️⃣ relative (Positioning)
+relative is used to set an element’s position relative to its normal placement, allowing child elements to be positioned absolutely inside it.
+
