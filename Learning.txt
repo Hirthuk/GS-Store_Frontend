@@ -18,4 +18,7 @@ group is a Tailwind utility class that allows styling child elements based on th
 2️⃣ relative (Positioning)
 relative is used to set an element’s position relative to its normal placement, allowing child elements to be positioned absolutely inside it.
 
+We have implemented this using small screen navbar- We made the element absoulte of that it wil be relative to body(No other element has relative so no parent)
+This make it sit on top of the elements
+Use relative on the parent if you want absolute children to be positioned inside it.
 
