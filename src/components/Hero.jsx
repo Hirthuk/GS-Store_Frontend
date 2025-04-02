@@ -1,24 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { assets } from '../assets/assets';
 
 const Hero = () => {
-    return (
-        <section className='flex flex-col sm:flex-row border border-gray-500'>
-            <div className='flex flex-col  w-full sm:w-1/2 justify-center items-center py-10 sm:py-0'>
-                <div className='flex flex-col  gap-3 '>
-                    <div className='flex items-center gap-2'>
-                        <p className='border-none bg-gray-950 h-[3px] w-8 md:w-16'></p>
-                        <h1 className='font-semibold font-sans'>THE BEST PRODUCTS</h1>
-                    </div>
-                    <h1>New Arrivals</h1>
-                    <div className='flex gap-2 items-center'>
-                        <h1 className='font-bold'>SHOP NOW</h1>
-                        <p className='border-none bg-gray-950 h-[1.5px] w-8 md:w-16'></p>
-                    </div>
-                </div>
-            </div>
+  return (
+    <section className="flex flex-col sm:flex-row border border-gray-500 shadow-md">
+      {/* Left Side - Content */}
+      <div className="w-full sm:w-1/2 flex flex-col justify-center items-center py-10 sm:py-0">
+        <div className="flex flex-col gap-3 text-center sm:text-left">
+          {/* Title with Line */}
+          <div className="flex items-center gap-2 justify-center sm:justify-start">
+            <p className="w-8 border-none bg-gray-950 h-[3px] md:w-16"></p>
+            <h1 className="text-1xl lg:text-2xl">THE BEST PRODUCTS</h1>
+          </div>
+          {/* Main Heading */}
+          <h1 className="text-5xl font-bold delius-regular">New Arrivals</h1>
+          {/* Shop Now with Line */}
+          <div className="flex gap-2 items-center justify-center sm:justify-start mt-2">
+            <h1 className="font-semibold text-2xl">SHOP NOW</h1>
+            <p className="border-none bg-gray-950 h-[1.5px] w-8 md:w-16"></p>
+          </div>
+        </div>
+      </div>
 
-        </section>
-    )
-}
+      {/* Right Side - Image */}
+      <div className="w-full sm:w-1/2 flex items-center">
+        <img className="w-full object-cover" src={assets.hero_img} alt="Hero" />
+      </div>
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;
