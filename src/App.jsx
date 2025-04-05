@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import ShopProvider from "./context/ShopContext";
 import {
   Home,
   About,

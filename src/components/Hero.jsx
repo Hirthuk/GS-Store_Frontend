@@ -13,10 +13,10 @@ const Hero = () => {
             <h1 className="text-1xl lg:text-2xl">THE BEST PRODUCTS</h1>
           </div>
           {/* Main Heading */}
-          <h1 className="text-5xl font-bold delius-regular">New Arrivals</h1>
+          <h1 className="text-4xl font-bold delius-regular lg:text-5xl">New Arrivals</h1>
           {/* Shop Now with Line */}
           <div className="flex gap-2 items-center justify-center sm:justify-start mt-2">
-            <h1 className="font-semibold text-2xl">SHOP NOW</h1>
+            <h1 className="font-semibold text-2xl lg:text-3xl">SHOP NOW</h1>
             <p className="border-none bg-gray-950 h-[1.5px] w-8 md:w-16"></p>
           </div>
         </div>

@@ -23,5 +23,56 @@ This make it sit on top of the elements
 Use relative on the parent if you want absolute children to be positioned inside it.
 
 UseContext -->
+---
+
+## 🧠 **React Context + useContext – Notes for My Project**
+
+### ✅ **What is `createContext` and `useContext`?**
+
+- `createContext()` creates a central place (called context) to store data.
+- `useContext()` is a hook used to access that data from any component.
+
+---
+
+### 🎯 **Why We Use It**
+- To **avoid prop drilling** — 
+instead of passing props manually through multiple components, we make data available globally to any component.
+
+---
+
+### 🔧 **How I Used It in My Project**
+
+1. **Created a Context File** (`ShopContext.js`)
+   - Used `createContext()` to create `ShopContext`.
+   - Made a `ShopProvider` component that wraps the entire app.
+   - Inside `ShopProvider`, I added values like:
+     - `products` (product data)
+     - `ruppees` (currency symbol)
+     - `delivery_fee` (extra fee)
+
+2. **Wrapped App with Provider** in `main.jsx` (entry file)
+   - Placed `<ShopProvider>` around `<App />` so that **all child components** can use the context data.
+
+3. **Accessed Data with `useContext`**
+   - Inside `LatestCollections.jsx`, I used `useContext(ShopContext)` to access the `products` array.
+   - This gives direct access to context values — no need to pass props from parent to child.
+
+---
+
+### 🧩 **Key Terms Recap**
+
+| Term              | Meaning                                                                 |
+|-------------------|-------------------------------------------------------------------------|
+| `createContext()` | Creates a context (data container).                                     |
+| `Provider`        | Wraps components and provides them with context data.                   |
+| `children`        | Represents whatever JSX is nested inside the provider.                  |
+| `useContext()`    | React hook to grab data from context anywhere in the component tree.    |
+
+---
+
+### 📌 Example in My Project
+
+- **Global data** like `products`, `rupees`, `delivery_fee` are needed in many places.
+- So instead of passing them manually, I stored them in a context and accessed them using `useContext`.
 
 
