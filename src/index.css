@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,5 +22,21 @@ a.active hr{
     font-family: "Delius", cursive;
     font-weight: 400;
     font-style: normal;
+  }
+
+
+  .raleway-name{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @media screen and (max-width:640px) {
+    a.active{
+        background-color: black;
+        color: white;
+    }
+    
   }
   

@@ -6,12 +6,14 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   return (
     <section className="flex items-center justify-between py-5 font-medium">
-      <img
-        src={assets.logo2}
-        className="w-36 border border-gray-500 rounded-md shadow-lg"
-        alt="Logo_image"
-        srcset=""
-      />
+      <Link to={'/'}>
+        <img
+          src={assets.logo2}
+          className="w-36 border border-gray-500 rounded-md shadow-lg hover:cursor-pointer"
+          alt="Logo_image"
+          srcset=""
+        />
+      </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1 transition-all duration-300 hover:-translate-y-0.5 scale-105">
           <p>HOME</p>
@@ -25,7 +27,7 @@ const Navbar = () => {
           <p>ABOUT</p>
           <hr className="bg-gray-900 border-none h-[1.5px] w-2/3 hidden" />
         </NavLink>
-        <NavLink to="/contact" className="flex flex-col items-center gap-1 transition-all duration-300 hover:-translate-y-0.5 scale-105">
+        <NavLink to="contact" className="flex flex-col items-center gap-1 transition-all duration-300 hover:-translate-y-0.5 scale-105">
           <p>CONTACT</p>
           <hr className="bg-gray-900 border-none h-[1.5px] w-2/3 hidden" />
         </NavLink>
@@ -67,22 +69,21 @@ const Navbar = () => {
       </div>
       {/* SIde bar menu for small screens */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-          visible ? "w-full" : "w-0"
-        }`}
+        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : "w-0"
+          }`}
       >
         <div className="flex flex-col text-gray-600">
-          <div onClick={()=> setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
+          <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
             <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="Back_Icon" />
             <p>Back</p>
           </div>
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/">Home</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/collection">COLLECTION</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/about">ABOUT</NavLink>
-          <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/">CONTACT</NavLink>
+          <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/contact">CONTACT</NavLink>
         </div>
-      </div> 
-    </section> 
+      </div>
+    </section>
   );
 };
 
