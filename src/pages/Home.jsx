@@ -4,6 +4,7 @@ import LatestCollections from '../components/LatestCollections'
 import BestSellers from '../components/BestSellers'
 import { Outlet } from 'react-router-dom'
 import Outpolicy from '../components/Outpolicy'
+import NewsLetter from '../components/NewsLetter'
 const Home = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const Home = () => {
       <LatestCollections></LatestCollections>
       <BestSellers/>
       <Outpolicy/>
+      <NewsLetter/>
     </div>
   )
 }

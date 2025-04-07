@@ -2,7 +2,7 @@ import React from "react";
 
 const SinglePolicy = ({ text1, text2, image }) => {
   return (
-    <div className="flex flex-col items-center gap-5 sm:gap-10">
+    <div className="flex flex-col items-center gap-5 sm:gap-7">
       <img className="w-12 h-12" src={image} alt="" />
       <div className="flex flex-col text-center gap-1">
         <p className="font-bold text-sm">{text1}</p>
