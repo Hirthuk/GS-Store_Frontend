@@ -5,6 +5,7 @@ import BestSellers from '../components/BestSellers'
 import { Outlet } from 'react-router-dom'
 import Outpolicy from '../components/Outpolicy'
 import NewsLetter from '../components/NewsLetter'
+import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const Home = () => {
       <BestSellers/>
       <Outpolicy/>
       <NewsLetter/>
+      <Footer/>
     </div>
   )
 }

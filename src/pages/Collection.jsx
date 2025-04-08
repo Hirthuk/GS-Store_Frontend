@@ -1,10 +1,11 @@
 import React from 'react'
+import Footer from '../components/Footer'
 
 const Collection = () => {
   return (
-    <div>
+   <section><Footer/></section>
       
-    </div>
+   
   )
 }
 

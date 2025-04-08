@@ -75,4 +75,6 @@ instead of passing props manually through multiple components, we make data avai
 - **Global data** like `products`, `rupees`, `delivery_fee` are needed in many places.
 - So instead of passing them manually, I stored them in a context and accessed them using `useContext`.
 
+window.scrollTo(0,0); --> This DOM Proprty is used to scroll the page to top
+
 
