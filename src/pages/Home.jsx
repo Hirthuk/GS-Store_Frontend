@@ -14,7 +14,6 @@ const Home = () => {
       <BestSellers/>
       <Outpolicy/>
       <NewsLetter/>
-      <Footer/>
     </div>
   )
 }

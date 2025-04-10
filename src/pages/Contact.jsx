@@ -8,8 +8,9 @@ const Contact = () => {
   return (
     <div>
       <section className="delius-regular flex flex-col items-center gap-10 px-4 py-10 text-lg md:text-xl">
+        <div className='text-3xl -mt-5'>
         <Title text1={"CONTACT"} text2={"US"} />
-
+        </div>
         <div className="flex flex-col md:flex-row gap-10 items-center justify-center w-full max-w-6xl">
           {/* Contact Image */}
           <img
@@ -43,7 +44,6 @@ const Contact = () => {
       </section>
 
       <NewsLetter />
-      <Footer />
     </div>
   );
 };

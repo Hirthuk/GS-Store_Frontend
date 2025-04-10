@@ -13,10 +13,12 @@ import {
   Login,
 } from "./pages/index";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="place-order" element={<PlaceOrder />} />
         <Route path="product/:productId" element={<Product />} />
       </Routes>
+      <Footer/>
     </div>
   );
 };
