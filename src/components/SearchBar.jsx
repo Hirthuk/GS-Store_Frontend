@@ -1,11 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets'
+import { Link, useLocation } from 'react-router-dom'
 
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext)
-
-  return showSearch ? (
+  const [visible,setVisible] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+  
+    if (location.pathname.includes('collection')) {
+      setVisible(true);
+    }
+    else{
+        setVisible(false);
+    }
+  },[location])
+ 
+  return showSearch && visible ? (
     <section className='w-full bg-gray-100 py-4 px-6 shadow-md'>
       <div className='max-w-4xl mx-auto flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-300'>
         {/* Search Icon */}
@@ -14,7 +26,7 @@ const SearchBar = () => {
         {/* Search Input */}
         <input
           type='text'
-          placeholder='Try Men Women shirt'
+          placeholder='Try shirt trowser top'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className='flex-grow outline-none px-2 text-sm sm:text-base bg-transparent'

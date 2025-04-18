@@ -128,5 +128,33 @@ Can sit next to other elements on the same line.
 
 Great for buttons, badges, or other UI elements that need to align inline but use flex for internal layout.
 
+Sure! Here's a short note for quick reference:
+
+---
+
+### 🧠 `useLocation` (React Router) -Used in Search Bar
+
+- **Purpose:** Gets info about the current URL.
+- **Import from:** `react-router-dom`
+- **Syntax:**  
+  ```js
+  const location = useLocation();
+  ```
+
+- **Returns:**  
+  An object with:
+  - `pathname`: current route path (e.g., `/home`)
+  - `search`: query string (e.g., `?q=shirt`)
+  - `hash`: URL hash (e.g., `#section1`)
+  - `state`: state passed via navigation
+  - `key`: unique location ID
+
+- **Use cases:**  
+  - Read current route
+  - Get query parameters
+  - Access state passed through navigation
+
+---
+
 
 
