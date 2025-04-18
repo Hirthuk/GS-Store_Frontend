@@ -34,10 +34,10 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h3 className="text-base font-semibold text-gray-800">GS Private Limited</h3>
           <ul className="flex flex-col gap-2">
-            <Link to="/" className="hover:text-black">Home</Link>
-            <Link to="/about" className="hover:text-black">About Us</Link>
-            <Link to="/cart" className="hover:text-black">Delivery</Link>
-            <Link to="/privacy-policy" className="hover:text-black">Privacy Policy</Link>
+            <Link to="/" onClick={() => window.scrollTo({top:0, behavior:'smooth'})} className="hover:text-black">Home</Link>
+            <Link to="/about" onClick={() => window.scrollTo({top:0, behavior:'smooth'})} className="hover:text-black">About Us</Link>
+            <Link to="/cart" onClick={() => window.scrollTo({top:0, behavior:'smooth'})} className="hover:text-black">Delivery</Link>
+            <Link to="/privacy-policy"onClick={() => window.scrollTo({top:0, behavior:'smooth'})}  className="hover:text-black">Privacy Policy</Link>
           </ul>
         </div>
 

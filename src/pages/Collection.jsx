@@ -5,6 +5,7 @@ import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import Products from "../components/Products";
+
 const Collection = () => {
   const { products } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
@@ -12,6 +13,7 @@ const Collection = () => {
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortValue, setSortValue] = useState("relevant")
+
 
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
@@ -74,7 +76,7 @@ const Collection = () => {
 
   return (
     <section className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
-      {/* Filter options */}
+    {/* Filter options */}
       <div className="min-w-60">
         <div className="flex items-center gap-2">
           <p
@@ -91,7 +93,7 @@ const Collection = () => {
         </div>
         {/* Category filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"
+          className={`border border-gray-300 w-full  pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"
             } sm:block`}
         >
           <p className="text-sm mb-3 font-medium">CATEGORIES</p>
@@ -130,7 +132,7 @@ const Collection = () => {
         </div>
         {/* SubCategory filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? "" : "hidden"
+          className={`border border-gray-300 w-full pl-5 py-3 my-5 ${showFilter ? "" : "hidden"
             } sm:block`}
         >
           <p className="text-sm mb-3 font-medium">TYPE</p>
@@ -170,7 +172,7 @@ const Collection = () => {
       </div>
       {/* Right side collection */}
       <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2xl mb-4">
+        <div className="flex justify-between text-base sm:text-2xl mb-4 gap-2">
           <Title text1={"ALL"} text2={"COLLECTION"} />
           {/* Product sort */}
           <select

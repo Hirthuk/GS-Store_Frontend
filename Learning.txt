@@ -76,7 +76,7 @@ instead of passing props manually through multiple components, we make data avai
 - So instead of passing them manually, I stored them in a context and accessed them using `useContext`.
 
 window.scrollTo(0,0); --> This DOM Proprty is used to scroll the page to top
-
+window.scrollTo({top:0, behavior:'smooth'}) - Can be passed as object with other functionalites like behavior
 Select and option tag to create dropdown menu
 Sure! Here's a short and clear explanation:
 
@@ -119,6 +119,14 @@ A dropdown with:
 
 ---
 
-Let me know if you want multi-select, default selected, or styling tips too!
+ display: inline-flex
+The element behaves like an inline element.
+
+It only takes up as much width as needed by its content.
+
+Can sit next to other elements on the same line.
+
+Great for buttons, badges, or other UI elements that need to align inline but use flex for internal layout.
+
 
 
