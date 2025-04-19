@@ -15,6 +15,8 @@ import {
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
+import ProductNotFound from "./components/ProductNotFound";
+import PageNotFound from './components/PageNotFound'
 
 const App = () => {
   return (
@@ -31,7 +33,9 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="orders" element={<Orders />} />
         <Route path="place-order" element={<PlaceOrder />} />
-        <Route path="product/:productId" element={<Product />} />
+        <Route path="/products/:productId" element={<Product />} />
+        <Route path="/product-not-found" element={<ProductNotFound/>} />
+        <Route path="*" element={<PageNotFound/>} />
       </Routes>
       <Footer/>
     </div>

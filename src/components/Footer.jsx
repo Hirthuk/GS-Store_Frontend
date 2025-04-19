@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom note */}
-      <div className="text-center text-xs mt-10 text-gray-400">
+      <div className="text-center text-sm mt-10 text-gray-800">
         © {new Date().getFullYear()} GS Store. All rights reserved.
       </div>
     </footer>

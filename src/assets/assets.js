@@ -76,6 +76,8 @@ import cross_icon from './cross_icon.png'
 import logo2 from './logo3.png'
 import ABOUT_US_Image from './ABOUT_US_Image.png'
 import contact from './Contact_us_image.png'
+import pagenotfound from './page-not-found-error-404.jpg'
+import productnotfound from './product-not-found.png'
 export const assets = {
     logo,
     ABOUT_US_Image,
@@ -97,7 +99,9 @@ export const assets = {
     razorpay_logo,
     stripe_logo,
     cross_icon,
-    contact
+    contact,
+    pagenotfound,
+    productnotfound
 }
 
 export const products = [

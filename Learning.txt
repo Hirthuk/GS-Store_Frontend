@@ -154,7 +154,7 @@ Sure! Here's a short note for quick reference:
   - Get query parameters
   - Access state passed through navigation
 
----
+useParams(); //Hook used to Return the paramter from the current URL - used in Product.jsx
 
 
 
