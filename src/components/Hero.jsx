@@ -24,7 +24,7 @@ const Hero = () => {
 
       {/* Right Side - Image */}
       <div className="w-full sm:w-1/2 flex items-center">
-        <img className="w-full object-cover" src={assets.hero_img} alt="Hero" />
+        <img className="w-full object-cover" src={assets.homepage} alt="Hero" />
       </div>
     </section>
   );

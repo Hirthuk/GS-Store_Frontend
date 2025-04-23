@@ -109,9 +109,9 @@ const Product = () => {
                     </p>
                   ))}
                 </div>
-                <form action="" method="post" className='bg-black text-white text-center w-1/2 px-3 py-3 mt-5 min-w-36 sm:w-1/3'>
+                <div className='bg-black text-white text-center w-1/2 px-3 py-3 mt-5 min-w-36 sm:w-1/3'>
                   <button type="submit">ADD TO CART</button>
-                </form>
+                </div>
                 <p className='w-full border mt-5'></p>
               </div>
               <div className='sm:text-sm text-[13px] leading-5 mt-3 w-full'>

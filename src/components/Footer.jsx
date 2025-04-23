@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-white px-6 py-10 text-gray-600 text-sm mt-20 border border-gray-50 rounded-lg shadow-sm">
+    <footer className="w-full bg-white px-6 py-10 text-gray-600 text-sm mt-20 border border-gray-50 rounded-lg shadow-sm xl:text-xs">
       <div className="flex flex-col md:flex-row justify-between gap-10 max-w-6xl mx-auto">
         {/* Logo & About */}
         <div className="flex flex-col gap-4 md:w-1/3">

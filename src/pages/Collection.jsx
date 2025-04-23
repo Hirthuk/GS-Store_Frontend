@@ -5,6 +5,7 @@ import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import Products from "../components/Products";
+import NoResultsFound from "../components/NoResultsFound";
 
 const Collection = () => {
   const { products,search, setSearch, showSearch} = useContext(ShopContext);
@@ -12,7 +13,8 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
-  const [sortValue, setSortValue] = useState("relevant")
+  const [sortValue, setSortValue] = useState("relevant");
+  
 
 
   const toggleCategory = (e) => {
@@ -34,8 +36,8 @@ const Collection = () => {
 
   useEffect(() => {
     setFilterProducts(products);
+    
   }, []);
-
   const applyFilter = () => {
     let productscopy = products.slice();
     if(showSearch && search){
@@ -77,7 +79,7 @@ const Collection = () => {
   useEffect(() => {
     sortType();
   },[sortValue])
-  console.log(filterProducts);
+  // console.log(filterProducts);
   return (
     <section className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
     {/* Filter options */}
@@ -191,7 +193,7 @@ const Collection = () => {
           </select>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-          {filterProducts.map((item, index) => (
+          {filterProducts.length > 0 ? filterProducts.map((item, index) => (
             <Products
               key={index}
               id={item._id}
@@ -199,7 +201,9 @@ const Collection = () => {
               price={item.price}
               name={item.name}
             />
-          ))}
+          )):
+          <div className="col-span-full"> <NoResultsFound/></div>
+        }
         </div>
       </div>
     </section>
