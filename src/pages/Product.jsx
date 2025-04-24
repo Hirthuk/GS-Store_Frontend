@@ -10,7 +10,7 @@ import Title from '../components/Title'
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, ruppees } = useContext(ShopContext);
+  const { products, ruppees, updateCartItem, getCartItem } = useContext(ShopContext);
   const [getProduct, setProduct] = useState(null);
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
@@ -34,6 +34,13 @@ const Product = () => {
   }, [productId, products]);
 
   
+  const addtoCart = () => {
+    updateCartItem(productId,getProduct.name,getProduct.sizes[sizeBorder],image[0],getProduct.price)
+  }
+  
+  useEffect(() => {
+    console.log(getCartItem);
+  },[addtoCart])
 
   useEffect(() => {
     if(getProduct){
@@ -48,7 +55,7 @@ const Product = () => {
     productCopy = productCopy.filter((item) => item.category==getProduct.category && item.subCategory==getProduct.subCategory && item._id !== getProduct._id);
     SetFilter(productCopy);
   }
-  console.log(Filter);
+  // console.log(Filter);
   
   return (
     <section className="w-full delius-regular">
@@ -110,7 +117,7 @@ const Product = () => {
                   ))}
                 </div>
                 <div className='bg-black text-white text-center w-1/2 px-3 py-3 mt-5 min-w-36 sm:w-1/3'>
-                  <button type="submit">ADD TO CART</button>
+                  <button onClick={() => addtoCart()} type="submit">ADD TO CART</button>
                 </div>
                 <p className='w-full border mt-5'></p>
               </div>
