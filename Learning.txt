@@ -157,4 +157,14 @@ Sure! Here's a short note for quick reference:
 useParams(); //Hook used to Return the paramter from the current URL - used in Product.jsx
 
 
+React - toastify
+React Toastify is a library used to show beautiful, customizable, 
+non-blocking popup messages (called "toasts") in React apps.
 
+npm install react-toastify
+
+toast.success("Item added to cart!");
+toast.error("Something went wrong!"); 
+import toast and toastcontainer as well
+Incorporated toastcontainer which first step in app.jsx then we can use it using toast method
+// Used in product page when add to cart clicked without selcting size

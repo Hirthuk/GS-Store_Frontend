@@ -7,10 +7,11 @@ import ProductNotFound from '../components/ProductNotFound'
 import { assets } from '../assets/assets'
 import Products from '../components/Products'
 import Title from '../components/Title'
+import {toast} from 'react-toastify'
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, ruppees, updateCartItem, getCartItem } = useContext(ShopContext);
+  const { products, ruppees, getCartItem, addToCart} = useContext(ShopContext);
   const [getProduct, setProduct] = useState(null);
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
@@ -35,12 +36,13 @@ const Product = () => {
 
   
   const addtoCart = () => {
-    updateCartItem(productId,getProduct.name,getProduct.sizes[sizeBorder],image[0],getProduct.price)
+    if(!getProduct.sizes[sizeBorder]){
+      toast.error("Select Product Size 😊")
+      return null;
+    }
+    addToCart(productId,getProduct.name,getProduct.sizes[sizeBorder],image[0],getProduct.price)
   }
   
-  useEffect(() => {
-    console.log(getCartItem);
-  },[addtoCart])
 
   useEffect(() => {
     if(getProduct){
@@ -48,6 +50,9 @@ const Product = () => {
     }
   },[getProduct])
 
+  // useEffect(() => {
+  //   console.log(getCartItem);
+  //  },[sizeBorder])
 
 
   const relatedItems = () => {

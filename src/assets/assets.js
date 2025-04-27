@@ -78,7 +78,8 @@ import ABOUT_US_Image from './ABOUT_US_Image.png'
 import contact from './Contact_us_image.png'
 import pagenotfound from './page-not-found-error-404.jpg'
 import productnotfound from './product-not-found.png'
-import homepage from './webpage_home_page.png'
+import homepage from './Home_page_final.jpeg'
+import empty_cart from './empty_cart.jpeg'
 export const assets = {
     logo,
     ABOUT_US_Image,
@@ -103,7 +104,8 @@ export const assets = {
     contact,
     pagenotfound,
     productnotfound,
-    homepage
+    homepage,
+    empty_cart
 }
 
 export const products = [

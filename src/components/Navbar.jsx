@@ -1,11 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, Link } from "react-router-dom";
 import ShopProvider, { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const {setShowSearch} = useContext(ShopContext);
+  const {setShowSearch,cartOverallCount} = useContext(ShopContext);
+  useEffect(() => {
+
+  },[cartOverallCount]);
   return (
     <section className="flex items-center justify-between py-5 font-medium">
       <Link to={'/'}>
@@ -61,7 +64,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <img className="w-5 min-w-5" src={assets.cart_icon} alt="Cart_Icon" />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-xl text-[8px]">
-            0
+            {cartOverallCount}
           </p>
         </Link>
         <img
