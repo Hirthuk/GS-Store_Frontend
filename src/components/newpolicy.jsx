@@ -1,6 +1,6 @@
 import React from "react";
 
-const SinglePolicy = ({ text1, text2, image }) => {
+const Newpolicy = ({ text1, text2, image }) => {
   return (
     <div className="flex flex-col items-center gap-5 sm:gap-7">
       <img className="w-12 h-12" src={image} alt="" />
@@ -12,4 +12,4 @@ const SinglePolicy = ({ text1, text2, image }) => {
   );
 };
 
-export default SinglePolicy;
+export default Newpolicy;
