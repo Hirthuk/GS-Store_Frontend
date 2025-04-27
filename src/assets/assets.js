@@ -80,6 +80,7 @@ import pagenotfound from './page-not-found-error-404.jpg'
 import productnotfound from './product-not-found.png'
 import homepage from './Home_page_final.jpeg'
 import empty_cart from './empty_cart.jpeg'
+import cash_on_delivery from './cod_delivery.jpg'
 export const assets = {
     logo,
     ABOUT_US_Image,
@@ -105,7 +106,8 @@ export const assets = {
     pagenotfound,
     productnotfound,
     homepage,
-    empty_cart
+    empty_cart,
+    cash_on_delivery
 }
 
 export const products = [

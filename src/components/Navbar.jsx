@@ -47,17 +47,25 @@ const Navbar = () => {
         />
         </Link>
         <div className="group relative">
+          <Link to={'/login'} className="bg-red-400">
           <img
             src={assets.profile_icon}
             className="w-5 min-w-5 h-5 cursor-pointer"
             alt="profile icon"
             srcset=""
           />
+          </Link>
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 text-gray-700">
             <div className="flex flex-col gap-2 w-36 bg-slate-200 items-center border rounded-xl py-3 px-5">
-              <p className="cursor-pointer hover:text-black">My Profile</p>
-              <p className="cursor-pointer hover:text-black">Orders</p>
-              <p className="cursor-pointer hover:text-black">Logout</p>
+              <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/login'}>
+              <p className="cursor-pointer hover:text-black ">My Profile</p>
+              </Link>
+              <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/orders'}>
+              <p className="cursor-pointer hover:text-black ">Orders</p>
+              </Link>
+              <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/logout'}>
+              <p className="cursor-pointer hover:text-black ">Logout</p>
+              </Link>
             </div>
           </div>
         </div>

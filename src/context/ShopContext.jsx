@@ -9,7 +9,8 @@ export const ShopProvider = ({ children }) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-    
+    const [paymentMethod,setPaymentMethod] = useState('cod');
+    const [myOrders,setMyOrders] = useState([]);
     // Calculate overall count based on cart items
     const cartOverallCount = cartItems.reduce((total, item) => total + item.count, 0);
 
@@ -85,7 +86,14 @@ export const ShopProvider = ({ children }) => {
         addToCart,
         updateCartItemCount,
         removeFromCart,
-        getCartTotal
+        getCartTotal,
+        paymentMethod,
+        setPaymentMethod,
+        myOrders,
+        setMyOrders,
+        setCartItems
+
+
     };
 
     return (
