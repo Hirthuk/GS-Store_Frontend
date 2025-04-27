@@ -36,7 +36,7 @@ const Cart = () => {
               <img 
                 src={assets.empty_cart} 
                 alt="Empty cart" 
-                className="w-28 h-28 object-contain"
+                className="w-28 h-28 object-contain rounded-lg"
               />
             </div>
             <h3 className="text-xl font-medium text-gray-800 mb-2">Your cart is empty</h3>
