@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    port: 5173,
     historyApiFallback: true,  // Critical for client-side routing
   },
   build: {

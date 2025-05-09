@@ -7,7 +7,8 @@
 
 Used in Main.js to route the pages inside the app.
  `<BrowserRouter>` in `main.js` is used to enable client-side routing in a React app. It wraps the entire application, allowing navigation between pages without a full page reload. 
- It replaces `<StrictMode>` when focusing on routing instead of React’s development warnings. 🚀
+ It replaces `<StrictMode>` when focusing on routing instead of React’s development warnings. 🚀 used inside main.jsx wrapping the whole app component
+ won't refresh the page and best for single page application react
 
  NavLink used for navigation with "to" to route the page -- applied in navbar
 
