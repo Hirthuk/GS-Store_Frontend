@@ -2,18 +2,17 @@ import React, { useContext, useEffect, useState } from 'react'
 import Title from './Title'
 import { ShopContext } from '../context/ShopContext';
 import Products from './Products';
-
 const BestSellers = () => {
   const {products} = useContext(ShopContext);
   const [getBestSellers,setBestSellers] = useState([]);
 
   useEffect(() => {
     setBestSellers(products.filter((item) => {
-      if(item.bestseller){
+      if(item.bestSeller){
         return true
       }
     }))
-  },[])
+  },[products])
   // console.log(getBestSellers);
 
   return (

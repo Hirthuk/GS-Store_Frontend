@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
-import { products } from "../assets/assets";
-
+import axios from 'axios'
+import {toast} from 'react-toastify'
+import { useEffect } from "react";
 export const ShopContext = createContext();
 
 export const ShopProvider = ({ children }) => {
@@ -11,6 +12,7 @@ export const ShopProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [paymentMethod,setPaymentMethod] = useState('cod');
     const [myOrders,setMyOrders] = useState([]);
+    const[products,setProducts] = useState([]);
     // Calculate overall count based on cart items
     const cartOverallCount = cartItems.reduce((total, item) => total + item.count, 0);
 
@@ -72,7 +74,20 @@ export const ShopProvider = ({ children }) => {
             0
         );
     };
-
+    const backEndURL = import.meta.env.VITE_BACKEDN_URL;
+    const getProducts = async () => {
+        const respone = await axios.get(backEndURL+"api/product/listProduct");
+        if(respone.data.success){
+            setProducts(respone.data.products);
+        }
+        else{
+            toast.error(respone.data.message);
+        }
+        console.log(respone.data.products)
+    }
+    useEffect(() => {
+        getProducts();
+    },[])
     const value = {
         products,
         ruppees,
@@ -91,7 +106,8 @@ export const ShopProvider = ({ children }) => {
         setPaymentMethod,
         myOrders,
         setMyOrders,
-        setCartItems
+        setCartItems,
+        backEndURL
 
 
     };
