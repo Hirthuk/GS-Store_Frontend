@@ -2,10 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, Link } from "react-router-dom";
 import ShopProvider, { ShopContext } from "../context/ShopContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const {setShowSearch,cartOverallCount} = useContext(ShopContext);
+  const {setShowSearch,cartOverallCount, backEndURL, token ,setToken, navigate} = useContext(ShopContext);
+
+  const logout = () => {
+    navigate('/login');
+    localStorage.setItem('token', '');
+    setToken('');
+    toast.success("Logged out successfully");
+  }
   useEffect(() => {
 
   },[cartOverallCount]);
@@ -47,15 +55,15 @@ const Navbar = () => {
         />
         </Link>
         <div className="group relative">
-          <Link to={'/login'} className="bg-red-400">
           <img
+          onClick={() => token ? null : navigate('/login')}
             src={assets.profile_icon}
             className="w-5 min-w-5 h-5 cursor-pointer"
             alt="profile icon"
             srcset=""
           />
-          </Link>
-          <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 text-gray-700">
+         
+          {token &&  <div className={`group-hover:block hidden absolute dropdown-menu right-0 pt-4 text-gray-700`}>
             <div className="flex flex-col gap-2 w-36 bg-slate-200 items-center border rounded-xl py-3 px-5">
               <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/login'}>
               <p className="cursor-pointer hover:text-black ">My Profile</p>
@@ -63,11 +71,12 @@ const Navbar = () => {
               <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/orders'}>
               <p className="cursor-pointer hover:text-black ">Orders</p>
               </Link>
-              <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/logout'}>
-              <p className="cursor-pointer hover:text-black ">Logout</p>
+              <Link className="hover:bg-gray-200 px-2 py-1 hover:shadow-sm rounded-sm hover:border border-gray-400" to={'/login'}>
+              <p onClick= {logout} className="cursor-pointer hover:text-black ">Logout</p>
               </Link>
             </div>
-          </div>
+          </div> }
+         
         </div>
         <Link to="/cart" className="relative">
           <img className="w-5 min-w-5" src={assets.cart_icon} alt="Cart_Icon" />

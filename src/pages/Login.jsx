@@ -1,29 +1,61 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Title from '../components/Title';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ShopContext } from '../context/ShopContext';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const AuthPage = () => {
   const [authType, setAuthType] = useState('login');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const {backEndURL, token, setToken} = useContext(ShopContext);
+  const [name,setName] = useState('');
+  const[email, setEmail] = useState('');
+  const[password, SetPassword] = useState('')
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    // console.log(`${authType === 'login' ? 'Login' : 'Signup'} with:`, formData);
-  };
+    try{
+      if(authType == 'signup'){
+         const response = await axios.post(backEndURL+"api/user/register", {name,email,password});
+        //  console.log(response);
+        if(response.data.success){
+          setToken(response.data.token);
+          localStorage.setItem('token', response.data.token);
+          toast.success("User registered successfully");
+          setName('');
+          setEmail('');
+          SetPassword('');
+        }
+        else{
+          toast.error(response.data.message);
+        }
+      }
+      else{
+        const response = await axios.post(backEndURL+"api/user/login",{email,password});
+        if(response.data.success){
+          setToken(response.data.token);
+          localStorage.setItem('token', response.data.token);
+          toast.success("Logged in successfully");
+          setEmail('');
+          SetPassword('');
+        }
+        else{
+          toast.error(response.data.message);
+        }
+        // console.log(response);
 
+      }
+    }
+    catch(error){
+      toast.error(error.message);
+    }
+  }
+
+  useEffect(() => {
+    if(token){
+      navigate('/');
+    }
+  },[token])
   return (
     <div className="min-h-screen flex items-start pt-16 justify-center  px-4 sm:px-6">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
@@ -42,8 +74,8 @@ const AuthPage = () => {
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                 placeholder="Full Name"
-                value={formData.name}
-                onChange={handleChange}
+                value={name}
+                onChange={(e) => {setName(e.target.value)}}
               />
             </div>
           )}
@@ -55,8 +87,8 @@ const AuthPage = () => {
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500"
               placeholder="Email address"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => {setEmail(e.target.value)}}
             />
           </div>
 
@@ -68,16 +100,16 @@ const AuthPage = () => {
               minLength={authType === 'signup' ? 8 : undefined}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500"
               placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => {SetPassword(e.target.value)}}
             />
           </div>
 
           {authType === 'login' && (
             <div className="text-right">
-              <Link to="/forgot-password" className="text-sm text-amber-600 hover:text-amber-500">
+              <p className="text-sm text-amber-600 hover:text-amber-500">
                 Forgot password?
-              </Link>
+                </p> 
             </div>
           )}
 

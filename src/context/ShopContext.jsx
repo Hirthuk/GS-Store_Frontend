@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 export const ShopContext = createContext();
 
 export const ShopProvider = ({ children }) => {
@@ -13,6 +14,8 @@ export const ShopProvider = ({ children }) => {
     const [paymentMethod,setPaymentMethod] = useState('cod');
     const [myOrders,setMyOrders] = useState([]);
     const[products,setProducts] = useState([]);
+    const[token, setToken] = useState(false);
+    const navigate = useNavigate();
     // Calculate overall count based on cart items
     const cartOverallCount = cartItems.reduce((total, item) => total + item.count, 0);
 
@@ -83,10 +86,16 @@ export const ShopProvider = ({ children }) => {
         else{
             toast.error(respone.data.message);
         }
-        console.log(respone.data.products)
+        // console.log(respone.data.products)
     }
     useEffect(() => {
         getProducts();
+    },[])
+
+    useEffect(() => {
+        if(!token && localStorage.getItem('token')){
+            setToken(localStorage.getItem('token'));
+        }
     },[])
     const value = {
         products,
@@ -107,7 +116,10 @@ export const ShopProvider = ({ children }) => {
         myOrders,
         setMyOrders,
         setCartItems,
-        backEndURL
+        backEndURL,
+        token,
+        setToken,
+        navigate
 
 
     };
