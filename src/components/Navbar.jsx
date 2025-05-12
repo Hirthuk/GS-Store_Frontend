@@ -44,6 +44,10 @@ const Navbar = () => {
           <p>CONTACT</p>
           <hr className="bg-gray-900 border-none h-[1.5px] w-2/3 hidden" />
         </NavLink>
+        {token? <NavLink to={import.meta.env.VITE_ADMIN_URL} className="flex flex-col items-center gap-1 transition-all duration-300 hover:-translate-y-0.5 scale-105">
+          <button className="border border-gray-500 px-2 py-1 rounded-xl bg-gray-700 text-white">ADMIN</button>
+          <hr className="bg-gray-900 border-none h-[1.5px] w-2/3 hidden" />
+        </NavLink>: ''}
       </ul>
       <div className="flex items-center gap-3 md:gap-6">
         <Link to={'/collection'}>
@@ -106,6 +110,7 @@ const Navbar = () => {
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/collection">COLLECTION</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/about">ABOUT</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to="/contact">CONTACT</NavLink>
+          {token ? <NavLink onClick={() => setVisible(false)} className="py-2 border pl-6 hover:shadow-md" to={import.meta.env.VITE_ADMIN_URL}>Admin panel</NavLink>: ''}
         </div>
       </div>
     </section>

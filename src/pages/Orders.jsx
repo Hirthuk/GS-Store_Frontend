@@ -2,13 +2,17 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Title from '../components/Title';
 import { ShopContext } from '../context/ShopContext';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const MyOrders = () => {
   // Your existing orders data
   const {myOrders} = useContext(ShopContext);
   // Calculate total price
   const totalPrice = myOrders.reduce((sum, item) => sum + (item.price * item.count), 0);
-
+  useEffect(() => {
+    toast.success("Just preview demo purposes");
+  },[])
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 sm:px-6 delius-regular">
       <div className="text-center mb-6 text-xl md:text-2xl">
