@@ -81,6 +81,7 @@ import productnotfound from './product-not-found.png'
 import homepage from './Home_page_final.jpeg'
 import empty_cart from './empty_cart.jpeg'
 import cash_on_delivery from './cod_delivery.jpg'
+import bmc_logo from './bmc-logo.png'
 export const assets = {
     logo,
     ABOUT_US_Image,
@@ -107,7 +108,8 @@ export const assets = {
     productnotfound,
     homepage,
     empty_cart,
-    cash_on_delivery
+    cash_on_delivery,
+    bmc_logo
 }
 
 export const products = [
